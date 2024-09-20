@@ -16,6 +16,8 @@ services:
     hostname: add-service
     ports:
       - 5051:5051  # host:container
+    volumes:
+      - ./addition/app:/app
     depends_on:
       - landing-service                             
     networks:
@@ -28,6 +30,8 @@ services:
     hostname: minus-service
     ports:
       - 5052:5052  # host:container
+    volumes:
+      - ./subtraction/app:/app
     depends_on:
       - landing-service                             
     networks:
@@ -40,6 +44,8 @@ services:
     hostname: multiply-service
     ports:
       - 5053:5053  # host:container
+    volumes:
+      - ./multiplication/app:/app
     depends_on:
       - landing-service                             
     networks:
@@ -52,6 +58,8 @@ services:
     hostname: divide-service
     ports:
       - 5054:5054  # host:container
+      volumes:
+      - ./division/app:/app
     depends_on:
       - landing-service                             
     networks:
@@ -63,6 +71,8 @@ services:
     hostname: gcd-service
     ports:
       - 5055:5055  # host:container
+    volumes:
+      - ./gcd/app:/app
     depends_on:
       - landing-service                             
     networks:
@@ -74,6 +84,8 @@ services:
     hostname: lcm-service
     ports:
       - 5056:5056  # host:container
+    volumes:
+      - ./lcm/app:/app
     depends_on:
       - landing-service  
       - gcd-service                           
@@ -86,6 +98,8 @@ services:
     hostname: modulus-service
     ports:
       - 5057:5057  # host:container
+    volumes:
+      - ./modulus/app:/app
     depends_on:
       - landing-service                         
     networks:
@@ -97,6 +111,8 @@ services:
     hostname: exponent-service
     ports:
       - 5058:5058  # host:container
+      volumes:
+      - ./exponent/app:/app
     depends_on:
       - landing-service                         
     networks:
@@ -108,6 +124,8 @@ services:
     hostname: greater-than-service
     ports:
       - 5059:5059  # host:container
+    volumes:
+      - ./greater_than/app:/app
     depends_on:
       - landing-service                         
     networks:
@@ -119,6 +137,8 @@ services:
     hostname: lesser-than-service
     ports:
       - 5060:5060  # host:container
+    volumes:
+      - ./lesser_than/app:/app
     depends_on:
       - landing-service                         
     networks:
@@ -130,6 +150,8 @@ services:
     hostname: equal-than-service
     ports:
       - 5061:5061  # host:container
+    volumes:
+      - ./equal/app:/app
     depends_on:
       - landing-service                         
     networks:
